@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+# Make sure each test contains the word 'test' in its executable name.
+
+import os
+import stat
+import subprocess
+
+flags = stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH
+for filename in os.listdir('.'):
+    if not os.path.isfile(filename):
+        continue
+    if not 'test' in filename:
+        continue
+    if 'run_tests' in filename:
+        continue
+    if filename.endswith('~'):
+        continue
+    if not os.stat(filename).st_mode & flags:
+        continue
+    print('Running ' + filename)
+    subprocess.run(os.path.realpath(filename))
