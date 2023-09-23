@@ -33,3 +33,7 @@ Then set the environment variables `BINDER_ADDRESS` and `BINDER_PORT` as appropr
 ./server
 ./client
 ```
+
+## Example Usage
+
+See the files `client_example.cc` and `server_example.cc`.
