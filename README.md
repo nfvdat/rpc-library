@@ -1,6 +1,6 @@
 ## Overview
 
-A simple RPC library in C++:
+A simple RPC library built in C++, with:
 - dynamic binding with multiple clients and servers
 - full crash tolerance
 - server side round robin load balancing
